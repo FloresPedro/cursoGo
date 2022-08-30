@@ -2,16 +2,23 @@ package main
 
 import "fmt"
 
-func main() {
-	fmt.Println("Funciones anonimas")
+func promedio(calificaciones ...int) int {
 
-	func() {
-		fmt.Println("Hola mundo desde una funcion sin nombre")
-	}()
+	var promedio, suma int
 
-	miFuncion := func() {
-		fmt.Println("Agregando una funcion a una variable")
+	for _, calificacion := range calificaciones {
+		suma = suma + calificacion
 	}
 
-	miFuncion()
+	promedio = suma / len(calificaciones)
+	return promedio
+}
+func main() {
+	//variadic function
+	//recibe n cantidad de argumentos
+	fmt.Println("Variadic functions (argumentos variables)")
+
+	resultado := promedio(10, 10, 10)
+
+	fmt.Println("El promedio es:", resultado)
 }

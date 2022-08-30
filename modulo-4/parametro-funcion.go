@@ -18,6 +18,7 @@ func suma(numero1, numero2 int) (int, string) {
 func main() {
 	// se extraen los dos resultados de la funcion
 	resultado, ok := suma(10, 20)
+	//resultado, _ := suma(15, 20) para NO hacer uso del segundo argumento
 
 	fmt.Println(resultado, " string de la funcion ", ok)
 }
